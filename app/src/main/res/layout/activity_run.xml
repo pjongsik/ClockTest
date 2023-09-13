@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RunActivity"
+    android:id="@+id/container">
+
+
+    <TextView
+        android:id="@+id/txt_workout"
+        android:layout_width="169dp"
+        android:layout_height="157dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="txt_workout"
+        android:textAlignment="center"
+        android:textSize="100sp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_rest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.355" />
+
+    <TextView
+        android:id="@+id/txt_rest"
+        android:layout_width="173dp"
+        android:layout_height="141dp"
+        android:layout_marginBottom="44dp"
+        android:gravity="center"
+        android:text="txt_rest"
+        android:textAlignment="center"
+        android:textSize="100sp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_sets"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_sets"
+        android:layout_width="172dp"
+        android:layout_height="140dp"
+        android:layout_marginBottom="176dp"
+        android:gravity="center"
+        android:text="txt_sets"
+        android:textAlignment="center"
+        android:textSize="100sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginBottom="44dp"
+        android:text="START"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_stop"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="44dp"
+        android:text="STOP"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
