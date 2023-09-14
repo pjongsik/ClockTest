@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.database.Cursor
 import android.os.Bundle
 import android.os.Handler
@@ -48,6 +49,19 @@ class MainActivity : AppCompatActivity() {
         initImageButton()
 
        // dbTest()
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+
+        // 화면 회전 이벤트가 발생했을 때 수행할 작업을 여기에 추가합니다.
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            // 가로 방향으로 회전했을 때 수행할 작업
+            Toast.makeText(this, "가로 방향으로 회전했습니다.", Toast.LENGTH_SHORT).show()
+        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            // 세로 방향으로 회전했을 때 수행할 작업
+            Toast.makeText(this, "세로 방향으로 회전했습니다.", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun initImageButton() {

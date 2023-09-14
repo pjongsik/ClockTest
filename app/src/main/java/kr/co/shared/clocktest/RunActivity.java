@@ -41,8 +41,10 @@ public class RunActivity extends AppCompatActivity {
     SoundPool soundPool;
 
     // progress
-    private ProgressBar progressBar;
-    private int progressStatus = 0;
+    private ProgressBar workoutProgressBar;
+    private ProgressBar restProgressBar;
+    private int workoutProgressStatus = 0;
+    private int restProgressStatus = 0;
     private Handler handler = new Handler();
 
     @Override
@@ -57,7 +59,8 @@ public class RunActivity extends AppCompatActivity {
         btnStart = findViewById(R.id.btn_start);
         btnStop = findViewById(R.id.btn_stop);
 
-        progressBar = findViewById(R.id.workout_progress_bar);
+        workoutProgressBar = findViewById(R.id.workout_progress_bar);
+        restProgressBar = findViewById(R.id.rest_progress_bar);
 
         setTimer();
         getData();
@@ -144,11 +147,16 @@ public class RunActivity extends AppCompatActivity {
         txtSets.setText(String.valueOf(setCount));
 
         //
-        int totalTime = data.getWork_time();
-        progressStatus = totalTime - workOutTime;
-        progressBar.setProgress(progressStatus);
+        int totalWorkoutTime = data.getWork_time();
+        workoutProgressStatus = totalWorkoutTime - workOutTime;
+        workoutProgressBar.setProgress(workoutProgressStatus);
+        Log.d("pjs", "displayTime^^ workoutProgressStatus : " + String.valueOf(workoutProgressStatus));
 
-        Log.d("pjs", "displayTime^^ progressStatus : " + String.valueOf(progressStatus));
+
+        int totalRestTime = data.getRest_time();
+        restProgressStatus = totalRestTime - restTime;
+        restProgressBar.setProgress(restProgressStatus);
+        Log.d("pjs", "displayTime^^ restProgressStatus : " + String.valueOf(restProgressStatus));
     }
 
     void startTimer() {
@@ -178,6 +186,7 @@ public class RunActivity extends AppCompatActivity {
         setCount = data.getSet_count();
 
         //
-        progressBar.setMax(data.getWork_time());
+        workoutProgressBar.setMax(data.getWork_time());
+        restProgressBar.setMax(data.getRest_time());
     }
 }

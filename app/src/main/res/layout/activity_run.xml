@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RunActivity"
-    android:id="@+id/container">
-
+    android:id="@+id/container"
+    >
 
     <TextView
         android:id="@+id/txt_workout"
@@ -19,36 +19,37 @@
         android:textSize="100sp"
         app:layout_constraintBottom_toTopOf="@+id/txt_rest"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.582"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.355" />
+        app:layout_constraintVertical_bias="0.298" />
 
     <TextView
         android:id="@+id/txt_rest"
         android:layout_width="173dp"
         android:layout_height="141dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="36dp"
         android:gravity="center"
         android:text="txt_rest"
         android:textAlignment="center"
         android:textSize="100sp"
         app:layout_constraintBottom_toTopOf="@+id/txt_sets"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txt_sets"
         android:layout_width="172dp"
         android:layout_height="140dp"
-        android:layout_marginBottom="176dp"
+        android:layout_marginBottom="148dp"
         android:gravity="center"
         android:text="txt_sets"
         android:textAlignment="center"
         android:textSize="100sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.543"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -89,4 +90,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
+    <ProgressBar
+        android:id="@+id/rest_progress_bar"
+        android:layout_width="234dp"
+        android:layout_height="211dp"
+        android:background="@drawable/circle_progress_background"
+        android:indeterminateOnly="false"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/circle_progress_bar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.442" />
 </androidx.constraintlayout.widget.ConstraintLayout>
