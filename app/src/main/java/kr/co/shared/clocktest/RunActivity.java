@@ -7,8 +7,10 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Intent;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.Timer;
@@ -34,8 +36,14 @@ public class RunActivity extends AppCompatActivity {
     Timer timer;
     TimerTask timerTask;
 
+    // sound
     SoundManager soundManager;
     SoundPool soundPool;
+
+    // progress
+    private ProgressBar progressBar;
+    private int progressStatus = 0;
+    private Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +56,8 @@ public class RunActivity extends AppCompatActivity {
         txtSets = findViewById(R.id.txt_sets);
         btnStart = findViewById(R.id.btn_start);
         btnStop = findViewById(R.id.btn_stop);
+
+        progressBar = findViewById(R.id.workout_progress_bar);
 
         setTimer();
         getData();
@@ -133,7 +143,12 @@ public class RunActivity extends AppCompatActivity {
         txtRest.setText(String.valueOf(restTime));
         txtSets.setText(String.valueOf(setCount));
 
-        Log.d("pjs", "displayTime^^");
+        //
+        int totalTime = data.getWork_time();
+        progressStatus = totalTime - workOutTime;
+        progressBar.setProgress(progressStatus);
+
+        Log.d("pjs", "displayTime^^ progressStatus : " + String.valueOf(progressStatus));
     }
 
     void startTimer() {
@@ -161,5 +176,8 @@ public class RunActivity extends AppCompatActivity {
         workOutTime = data.getWork_time();
         restTime = data.getRest_time();
         setCount = data.getSet_count();
+
+        //
+        progressBar.setMax(data.getWork_time());
     }
 }
