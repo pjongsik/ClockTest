@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
@@ -51,29 +52,58 @@ public class RunActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_run);
-
-        readyFragment = new ReadyFragment();
-        txtWorkout = findViewById(R.id.txt_workout);
-        txtRest = findViewById(R.id.txt_rest);
-        txtSets = findViewById(R.id.txt_sets);
-        btnStart = findViewById(R.id.btn_start);
-        btnStop = findViewById(R.id.btn_stop);
-
-        workoutProgressBar = findViewById(R.id.workout_progress_bar);
-        restProgressBar = findViewById(R.id.rest_progress_bar);
-
-        setTimer();
-        getData();
-        displayTime();
-        setEvent();
-        initSound();
+        init();
     }
+
+    void init() {
+         getSupportActionBar().hide();
+
+         readyFragment = new ReadyFragment();
+         txtWorkout = findViewById(R.id.txt_workout);
+         txtRest = findViewById(R.id.txt_rest);
+         txtSets = findViewById(R.id.txt_sets);
+         btnStart = findViewById(R.id.btn_start);
+         btnStop = findViewById(R.id.btn_stop);
+
+         workoutProgressBar = findViewById(R.id.workout_progress_bar);
+         restProgressBar = findViewById(R.id.rest_progress_bar);
+
+         setTimer();
+         getData();
+         displayTime();
+         setEvent();
+         initSound();
+     }
 
     private void initSound() {
         soundPool = new SoundPool.Builder().build();
         soundManager = new SoundManager(this, soundPool);
         soundManager.addSound(0, R.raw.surprise);
     }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        // 화면 방향이 변경되었을 때 실행할 코드를 여기에 추가
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            // 가로 방향
+            // 원하는 동작 수행
+
+
+
+        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            // 세로 방향
+            // 원하는 동작 수행
+
+
+        }
+
+        setContentView(R.layout.activity_run);
+        init();
+    }
+
+
 
     public void playSound() {
         soundManager.playSound(0);

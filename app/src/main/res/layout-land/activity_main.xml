@@ -17,9 +17,9 @@
             android:id="@+id/btn_routine"
             android:layout_width="86dp"
             android:layout_height="58dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="64dp"
             app:layout_constraintEnd_toStartOf="@+id/btn_routine2"
-            app:layout_constraintHorizontal_bias="0.745"
+            app:layout_constraintHorizontal_bias="0.563"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,32 +27,43 @@
             android:id="@+id/btn_routine2"
             android:layout_width="86dp"
             android:layout_height="68dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="504dp"
+            android:layout_marginTop="52dp"
+            android:layout_marginEnd="484dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txt_time"
-            android:layout_width="673dp"
-            android:layout_height="211dp"
+            android:layout_width="697dp"
+            android:layout_height="218dp"
             android:text="@{routine.current_time}"
-            android:textSize="200dp"
+            android:textSize="180dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.47"
             app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="120dp" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.694"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/txt_date"
             android:layout_width="349dp"
             android:layout_height="34dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="4dp"
             android:text="@{routine.current_date}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintHorizontal_bias="0.905"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="247dp"
+            android:layout_height="37dp"
+            android:text="가로 모드"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
