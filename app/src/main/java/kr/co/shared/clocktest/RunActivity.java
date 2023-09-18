@@ -87,22 +87,14 @@ public class RunActivity extends AppCompatActivity {
 
         // 화면 방향이 변경되었을 때 실행할 코드를 여기에 추가
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            // 가로 방향
-            // 원하는 동작 수행
-
-
 
         } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
-            // 세로 방향
-            // 원하는 동작 수행
-
 
         }
 
         setContentView(R.layout.activity_run);
         init();
     }
-
 
 
     public void playSound() {
@@ -116,11 +108,16 @@ public class RunActivity extends AppCompatActivity {
         transaction.commit();
 
         // ready 닫고 시작
+        btnStart.setEnabled(true);
+        btnStop.setEnabled(true);
         startTimer();
     }
 
 
     private void displayReadyFragment() {
+        btnStart.setEnabled(false);
+        btnStop.setEnabled(false);
+
         //화면에 보여지는 fragment를 추가하거나 바꿀 수 있는 객체를 만든다.
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
@@ -164,8 +161,7 @@ public class RunActivity extends AppCompatActivity {
                         }
                     }
                 }
-
-                displayTime();
+                handler.post(() -> displayTime());
             }
         };
 
@@ -190,19 +186,43 @@ public class RunActivity extends AppCompatActivity {
     }
 
     void startTimer() {
+
+        Log.d("pjs", "timer.purge() : " + String.valueOf(timer.purge()));
+
+        if (timer.purge() == 0) {
+            setTimer();
+        }
         timer.schedule(timerTask, 0, 1000);
     }
+
+    private  boolean isPause = false;
 
     private void setEvent() {
         btnStart.setOnClickListener(view -> {
             Log.d("pjs", "start ~!!");
-            displayReadyFragment();
-            btnStart.setText("PAUSE");
+
+            if (btnStart.getText().equals("START")) {
+                if (isPause == false) {
+                    displayReadyFragment();
+                } else {
+                    startTimer();
+                    isPause = false;
+                }
+                btnStart.setText("PAUSE");
+            }
+            else {
+                isPause = true;
+                timer.cancel();
+                btnStart.setText("START");
+            }
         });
 
         btnStop.setOnClickListener(view -> {
             Log.d("pjs", "stop ~!!");
             timer.cancel();
+            btnStart.setText("START");
+            isPause = false;
+            getData();
         });
     }
 
@@ -218,5 +238,10 @@ public class RunActivity extends AppCompatActivity {
         //
         workoutProgressBar.setMax(data.getWork_time());
         restProgressBar.setMax(data.getRest_time());
+
+        // 초기화
+        workoutProgressStatus = 0;
+        restProgressStatus = 0;
+        displayTime();
     }
 }

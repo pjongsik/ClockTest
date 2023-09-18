@@ -16,8 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Ready
-        3"
+            android:text="Ready\n3"
             android:textAlignment="center"
             android:textSize="100sp" />
     </LinearLayout>

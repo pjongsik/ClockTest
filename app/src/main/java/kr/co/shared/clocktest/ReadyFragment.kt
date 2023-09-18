@@ -1,6 +1,9 @@
 package kr.co.shared.clocktest
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,7 +28,7 @@ class ReadyFragment : Fragment() {
     private var param2: String? = null
     lateinit var viewText: TextView
 
-
+    private val handler = Handler(Looper.getMainLooper())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,21 +37,22 @@ class ReadyFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
 
-
-
         var time : Int = 2;
         timer(period = 1000, initialDelay = 1000) {
-            (getActivity() as RunActivity).playSound()
+       //     (getActivity() as RunActivity).playSound()
+            Log.d("pjs", "ready : " + (time).toString());
 
-            if (time <= 0) {
-                viewText.text = "GO\n"
-            }else {
-                viewText.text = "Ready\n" + (time).toString()
-            }
+            handler.post {
+                if (time <= 0) {
+                    viewText.text = "GO\n"
+                } else {
+                    viewText.text = "Ready\n" + (time).toString()
+                }
 
-            if (time-- < 0) {
-                cancel()
-                (getActivity() as RunActivity).closeFragment(this@ReadyFragment)
+                if (time-- < 0) {
+                    cancel()
+                    (getActivity() as RunActivity).closeFragment(this@ReadyFragment)
+                }
             }
         }
     }
