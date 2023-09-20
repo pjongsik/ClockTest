@@ -2,11 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RunActivity"
-    android:id="@+id/container"
-    >
+    tools:context=".RunActivity">
 
     <TextView
         android:id="@+id/txt_workout"
@@ -35,7 +34,8 @@
         android:textSize="100sp"
         app:layout_constraintBottom_toTopOf="@+id/txt_sets"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/rest_progress_bar"
         app:layout_constraintStart_toStartOf="parent" />
 
 
@@ -50,7 +50,8 @@
         android:textSize="100sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/rest_progress_bar"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -79,7 +80,7 @@
         android:id="@+id/workout_progress_bar"
         android:layout_width="264dp"
         android:layout_height="253dp"
-        android:layout_marginTop="-46dp"
+        android:layout_marginTop="-55dp"
         android:background="@drawable/circle_progress_background"
         android:indeterminateOnly="false"
         android:max="100"
@@ -87,7 +88,8 @@
         android:progressDrawable="@drawable/circle_progress_bar"
         app:layout_constraintBottom_toTopOf="@+id/txt_rest"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.598"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/rest_progress_bar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/txt_workout"
         app:layout_constraintVertical_bias="0.437" />
@@ -96,14 +98,14 @@
         android:id="@+id/rest_progress_bar"
         android:layout_width="234dp"
         android:layout_height="211dp"
-        android:layout_marginTop="-40dp"
+        android:layout_marginTop="-35dp"
         android:background="@drawable/circle_progress_background"
         android:indeterminateOnly="false"
         android:max="100"
         android:progress="0"
         android:progressDrawable="@drawable/circle_progress_bar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.57"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/txt_rest" />
 </androidx.constraintlayout.widget.ConstraintLayout>

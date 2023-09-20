@@ -108,8 +108,6 @@ class MainActivity : AppCompatActivity() {
             routine.postValue(RoutineData(dateFormatTime.format(Date(currentTime))
                                                , dateFormatDay.format(Date(currentTime)), 1,1,1,1, 1 ));
 
-
-
             handler.postDelayed(this, 1000)
 
         }
