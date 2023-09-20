@@ -14,23 +14,23 @@
         android:layout_height="157dp"
         android:layout_marginTop="32dp"
         android:gravity="center"
-        android:text="txt_workout"
+        android:text="100"
         android:textAlignment="center"
         android:textSize="100sp"
         app:layout_constraintBottom_toTopOf="@+id/txt_rest"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.582"
+        app:layout_constraintHorizontal_bias="0.537"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.298" />
+        app:layout_constraintVertical_bias="0.259" />
 
     <TextView
         android:id="@+id/txt_rest"
         android:layout_width="173dp"
         android:layout_height="141dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="12dp"
         android:gravity="center"
-        android:text="txt_rest"
+        android:text="10"
         android:textAlignment="center"
         android:textSize="100sp"
         app:layout_constraintBottom_toTopOf="@+id/txt_sets"
@@ -38,72 +38,72 @@
         app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent" />
 
+
     <TextView
         android:id="@+id/txt_sets"
         android:layout_width="172dp"
         android:layout_height="140dp"
-        android:layout_marginBottom="148dp"
+        android:layout_marginBottom="160dp"
         android:gravity="center"
-        android:text="txt_sets"
+        android:text="10"
         android:textAlignment="center"
         android:textSize="100sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.543"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginBottom="44dp"
+        android:layout_width="152dp"
+        android:layout_height="84dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:text="START"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_stop"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.727"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_stop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="76dp"
-        android:layout_marginBottom="44dp"
+        android:layout_width="144dp"
+        android:layout_height="77dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="28dp"
         android:text="STOP"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
 
     <ProgressBar
         android:id="@+id/workout_progress_bar"
         android:layout_width="264dp"
         android:layout_height="253dp"
+        android:layout_marginTop="-46dp"
         android:background="@drawable/circle_progress_background"
         android:indeterminateOnly="false"
         android:max="100"
         android:progress="0"
         android:progressDrawable="@drawable/circle_progress_bar"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/txt_rest"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.598"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/txt_workout"
+        app:layout_constraintVertical_bias="0.437" />
 
     <ProgressBar
         android:id="@+id/rest_progress_bar"
         android:layout_width="234dp"
         android:layout_height="211dp"
+        android:layout_marginTop="-40dp"
         android:background="@drawable/circle_progress_background"
         android:indeterminateOnly="false"
         android:max="100"
         android:progress="0"
         android:progressDrawable="@drawable/circle_progress_bar"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.442" />
+        app:layout_constraintTop_toTopOf="@+id/txt_rest" />
 </androidx.constraintlayout.widget.ConstraintLayout>

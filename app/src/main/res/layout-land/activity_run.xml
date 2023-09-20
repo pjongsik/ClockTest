@@ -7,71 +7,73 @@
     android:layout_height="match_parent"
     tools:context=".RunActivity">
 
+
     <TextView
         android:id="@+id/txt_workout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginStart="56dp"
         android:gravity="center"
         android:text="600"
         android:textAlignment="center"
         android:textSize="100sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <ProgressBar
         android:id="@+id/workout_progress_bar"
         android:layout_width="253dp"
         android:layout_height="225dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginStart="-70dp"
         android:background="@drawable/circle_progress_background"
         android:indeterminateOnly="false"
         android:max="100"
         android:progress="0"
         android:progressDrawable="@drawable/circle_progress_bar"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txt_workout"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/txt_rest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="120dp"
         android:gravity="center"
         android:text="10"
         android:textAlignment="center"
         android:textSize="100sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txt_workout"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <ProgressBar
         android:id="@+id/rest_progress_bar"
-        android:layout_width="219dp"
-        android:layout_height="205dp"
-        android:layout_marginStart="-25dp"
-        android:layout_marginTop="88dp"
+        android:layout_width="189dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="-35dp"
         android:background="@drawable/circle_progress_background"
         android:indeterminateOnly="false"
         android:max="100"
         android:progress="0"
         android:progressDrawable="@drawable/circle_progress_bar"
-        app:layout_constraintStart_toEndOf="@+id/workout_progress_bar"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txt_rest"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.497" />
 
     <TextView
         android:id="@+id/txt_sets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginStart="80dp"
         android:gravity="center"
         android:text="10"
         android:textAlignment="center"
         android:textSize="100sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txt_rest"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -79,18 +81,18 @@
         android:id="@+id/btn_start"
         android:layout_width="86dp"
         android:layout_height="164dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
         android:text="START"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/btn_stop"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btn_stop"
         android:layout_width="86dp"
         android:layout_height="164dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
         android:text="STOP"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
