@@ -30,6 +30,7 @@ public class RunActivity extends AppCompatActivity {
     Button btnStart;
     Button btnStop;
     RoutineData data;
+    Button btnAdd;
 
     int workOutTime = 0;
     int restTime = 0;
@@ -64,6 +65,7 @@ public class RunActivity extends AppCompatActivity {
          txtSets = findViewById(R.id.txt_sets);
          btnStart = findViewById(R.id.btn_start);
          btnStop = findViewById(R.id.btn_stop);
+         btnAdd = findViewById(R.id.ftb_add);
 
          workoutProgressBar = findViewById(R.id.workout_progress_bar);
          restProgressBar = findViewById(R.id.rest_progress_bar);
@@ -223,6 +225,13 @@ public class RunActivity extends AppCompatActivity {
             btnStart.setText("START");
             isPause = false;
             getData();
+        });
+
+        btnAdd.setOnClickListener(view -> {
+            Log.d("pjs", "add ~!!");
+
+            Intent intent = new Intent(this, RoutineActivity.class);
+            startActivity(intent);
         });
     }
 
