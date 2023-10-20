@@ -17,11 +17,26 @@
             tools:layout_editor_absoluteY="1dp"
             tools:ignore="MissingConstraints">
 
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:text="Title" />
+
+            <EditText
+                android:id="@+id/txt_title"
+                android:layout_width="match_parent"
+                android:layout_height="91dp"
+                android:ems="10"
+                android:hint="write a title"
+                />
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="30dp"
                 android:text="work out" />
 
             <EditText
@@ -36,6 +51,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="30dp"
                 android:text="rest" />
 
             <EditText
@@ -50,6 +66,7 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="30dp"
                 android:text="sets" />
 
             <EditText

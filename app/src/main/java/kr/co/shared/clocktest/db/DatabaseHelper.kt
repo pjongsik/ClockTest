@@ -30,14 +30,14 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         // 읽고 쓰기가 가능하게 DB 열기
         val db = writableDatabase
         // DB에 입력한 값으로 행 추가
-        db.execSQL("INSERT INTO MyRoutine(name, workout, rest, sets, dt_insert) VALUES('$name', '$workout', '$rest', '$sets', now())")
+        db.execSQL("INSERT INTO MyRoutine(name, workout, rest, sets, dt_insert) VALUES('$name', '$workout', '$rest', '$sets', datetime('now'))")
         db.close()
     }
 
     fun updateRoutine(id: Int, name: String, workout: Int, rest: Int, sets: Int) {
         val db = writableDatabase
         // 입력한 항목과 일치하는 행의 이름 정보 수정
-        db.execSQL("UPDATE MyRoutine SET name='$name', workout='$workout',  rest='$rest',  sets='$sets', dt_update = now() WHERE id='$id'")
+        db.execSQL("UPDATE MyRoutine SET name='$name', workout='$workout',  rest='$rest',  sets='$sets', dt_update = datetime('now') WHERE id='$id'")
         db.close()
     }
 

@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -30,7 +32,7 @@ public class RunActivity extends AppCompatActivity {
     Button btnStart;
     Button btnStop;
     RoutineData data;
-    Button btnAdd;
+    FloatingActionButton btnAdd;
 
     int workOutTime = 0;
     int restTime = 0;

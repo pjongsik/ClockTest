@@ -14,6 +14,7 @@ class RoutineActivity : AppCompatActivity() {
     private lateinit var txtWorkout : TextView
     private lateinit var txtRest : TextView
     private lateinit var txtSets : TextView
+    private lateinit var txtTitle : TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,12 +25,12 @@ class RoutineActivity : AppCompatActivity() {
         txtWorkout = findViewById(R.id.txt_workout)
         txtRest = findViewById(R.id.txt_rest)
         txtSets = findViewById(R.id.txt_sets)
-
+        txtTitle = findViewById(R.id.txt_title)
 
         val dbHelper = DatabaseHelper(this)
 
         btnSave.setOnClickListener {
-            dbHelper.insertRoutine("first", Integer.parseInt(txtWorkout.text.toString()), Integer.parseInt(txtRest.text.toString()), Integer.parseInt(txtSets.text.toString()));
+            dbHelper.insertRoutine(txtTitle.text.toString(), Integer.parseInt(txtWorkout.text.toString()), Integer.parseInt(txtRest.text.toString()), Integer.parseInt(txtSets.text.toString()));
 
             //
             dbHelper.selectRoutine();

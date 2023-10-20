@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
 
         handler.post(updateTimeTask)
 
-        initImageButton()
+        initButton()
 
        // dbTest()
     }
@@ -62,19 +62,19 @@ class MainActivity : AppCompatActivity() {
 
             // 가로 방향으로 회전했을 때 수행할 작업
             binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-            initImageButton()
+            initButton()
 
             Toast.makeText(this, "가로 방향으로 회전했습니다.", Toast.LENGTH_SHORT).show()
         } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
             // 세로 방향으로 회전했을 때 수행할 작업
             binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-            initImageButton()
+            initButton()
 
             Toast.makeText(this, "세로 방향으로 회전했습니다.", Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun initImageButton() {
+    private fun initButton() {
         binding.btnRoutine.setOnClickListener {
             Toast.makeText(applicationContext,
                 "Enter both numbers", Toast.LENGTH_SHORT).show()
